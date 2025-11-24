@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: url-shortener
+  datasource:
+    url: jdbc:mysql://localhost:3306/url_shortener_db
+    username: root
+    password: 9003346661@Sri
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cache:
+    type: caffeine
+    cache-names: short-urls
+    caffeine:
+      spec: maximumSize=10000,expireAfterAccess=600s
+
+server:
+  port: 8080
